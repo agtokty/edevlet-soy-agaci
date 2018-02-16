@@ -9,6 +9,9 @@ e-Devlet Alt-Üst Soy Bilgisi Sorgulama sayfasındaki verileri ağaç şeklinde 
 ## Nasıl kurulur ve kullanılır
 
 * Eklenti kodlarını kendi bilgisayırınıza indirmek için yukarıdan "Clone or Download" butonuna tıklayınız. 
+
+![settings_path](https://i.hizliresim.com/EPyPbn.png)
+
 * İnen zip dosyasındaki projeyi çıkartın.
 
 * Google Chrome uygulamasından eklentiler ayar sayfasını açın.
