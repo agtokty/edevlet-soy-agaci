@@ -33,6 +33,23 @@ function parseTable(table) {
 
 var findANABABA = function (self) { return self[this.self.length - 1] == "i" ? (self + "nin Babası") : (self + "nın Babası") }
 
+
+var findANABABA = function (self) {
+
+    if (self == "Kendisi") {
+        return {
+            Baba: "Babası",
+            Anne: "Annesi"
+        }
+    }
+
+    return {
+        Baba: self[this.self.length - 1] == "i" ? (self + "nin Babası") : (self + "nın Babası"),
+        Anne: self[this.self.length - 1] == "i" ? (self + "nin Annesi") : (self + "nın Annesi")
+    }
+
+}
+
 var ID = "Sıra";
 var YAKINLIK = "Yakınlık Derecesi"
 var DOGUM_YERI_TARIHI = "Doğum Yeri ve Tarihi"
@@ -77,91 +94,75 @@ var relation = {
     //EN ALT - baba
     "Babasının Babasının Babasının Babası": {
         self: "Babasının Babasının Babasının Babası",
-        Baba: function () { return findANABABA(this.self) },
-        Anne: function () { return findANABABA(this.self) },
+        Parent: function () { return findANABABA(this.self) },
     },
     "Babasının Babasının Babasının Annesi": {
         self: "Babasının Babasının Babasının Annesi",
-        Baba: function () { return findANABABA(this.self) },
-        Anne: function () { return findANABABA(this.self) },
+        Parent: function () { return findANABABA(this.self) }
     },
     "Babasının Babasının Annesinin Babası": {
         self: "Babasının Babasının Annesinin Babası",
-        Baba: function () { return findANABABA(this.self) },
-        Anne: function () { return findANABABA(this.self) },
+        Parent: function () { return findANABABA(this.self) }
     },
     "Babasının Babasının Annesinin Annesi": {
         self: "Babasının Babasının Annesinin Annesi",
-        Baba: function () { return findANABABA(this.self) },
-        Anne: function () { return findANABABA(this.self) },
+        Parent: function () { return findANABABA(this.self) }
     },
 
     "Babasının Annesinin Babasının Babası": {
         self: "Babasının Annesinin Babasının Babası",
-        Baba: function () { return findANABABA(this.self) },
-        Anne: function () { return findANABABA(this.self) },
+        Parent: function () { return findANABABA(this.self) }
     },
     "Babasının Annesinin Babasının Annesi": {
         self: "Babasının Annesinin Babasının Annesi",
-        Baba: function () { return findANABABA(this.self) },
-        Anne: function () { return findANABABA(this.self) },
+        Parent: function () { return findANABABA(this.self) }
     },
 
     "Babasının Annesinin Annesinin Babası": {
         self: "Babasının Annesinin Annesinin Babası",
-        Baba: function () { return findANABABA(this.self) },
-        Anne: function () { return findANABABA(this.self) },
+        Parent: function () { return findANABABA(this.self) }
     },
 
     "Babasının Annesinin Annesinin Annesi": {
         self: "Babasının Annesinin Annesinin Annesi",
-        Baba: function () { return findANABABA(this.self) },
-        Anne: function () { return findANABABA(this.self) },
+        Parent: function () { return findANABABA(this.self) }
     },
 
     //EN ALT - anna
     "Annesinin Babasının Babasının Babası": {
         self: "Annesinin Babasının Babasının Babası",
-        Baba: function () { return findANABABA(this.self) },
-        Anne: function () { return findANABABA(this.self) },
+        Parent: function () { return findANABABA(this.self) }
     },
     "Annesinin Babasının Babasının Annesi": {
         self: "Annesinin Babasının Babasının Annesi",
-        Baba: function () { return findANABABA(this.self) },
-        Anne: function () { return findANABABA(this.self) },
+        Parent: function () { return findANABABA(this.self) }
     },
     "Annesinin Babasının Annesinin Babası": {
         self: "Annesinin Babasının Annesinin Babası",
-        Baba: function () { return findANABABA(this.self) },
-        Anne: function () { return findANABABA(this.self) },
+        Parent: function () { return findANABABA(this.self) }
     },
     "Annesinin Babasının Annesinin Annesi": {
         self: "Annesinin Babasının Annesinin Annesi",
-        Baba: function () { return findANABABA(this.self) },
-        Anne: function () { return findANABABA(this.self) },
+        Parent: function () { return findANABABA(this.self) }
     },
 
     "Annesinin Annesinin Babasının Babası": {
         self: "Annesinin Annesinin Babasının Babası",
-        Baba: function () { return findANABABA(this.self) },
-        Anne: function () { return findANABABA(this.self) },
+        Parent: function () { return findANABABA(this.self) }
     },
     "Annesinin Annesinin Babasının Annesi": {
         self: "Annesinin Annesinin Babasının Annesi",
-        Baba: function () { return findANABABA(this.self) },
-        Anne: function () { return findANABABA(this.self) },
+        Parent: function () { return findANABABA(this.self) }
     },
 
     "Annesinin Annesinin Annesinin Babası": {
         self: "Annesinin Annesinin Annesinin Babası",
-        Baba: function () { return findANABABA(this.self) },
-        Anne: function () { return findANABABA(this.self) },
+        Parent: function () { return findANABABA(this.self) }
     },
 
     "Annesinin Annesinin Annesinin Annesi": {
         self: "Annesinin Annesinin Annesinin Annesi",
-        Baba: function () { return findANABABA(this.self) },
-        Anne: function () { return findANABABA(this.self) },
+        Parent: function () { return findANABABA(this.self) }
     },
 
     "Annesi": {
@@ -244,9 +245,9 @@ function getTree(all, yakinlik) {
         var motherTree = getTree(all, relation[yakinlik].Anne)
         var fatherTree = getTree(all, relation[yakinlik].Baba)
 
-        if (typeof relation[yakinlik].Anne == "function") {
-            motherTree = getTree(all, relation[yakinlik].Anne())
-            fatherTree = getTree(all, relation[yakinlik].Baba())
+        if (typeof relation[yakinlik].Parent == "function") {
+            motherTree = getTree(all, relation[yakinlik].Parent().Anne)
+            fatherTree = getTree(all, relation[yakinlik].Parent().Baba)
         }
 
         if (motherTree != null)
