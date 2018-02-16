@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Soy Ağacı Görselleştir",
+  "version": "0.1",
+  "description": "e-Devlet Alt-Üst Soy Bilgisi Sorgulama sayfasındaki verileri ağaç şeklinde görselleştiren tarayıcı eklentisidir.",
+  "icons": {
+    "16": "soy-agaci-16.png",
+    "128": "soy-agaci-128.png"
+  },
+  "browser_action": {
+    "default_icon": "soy-agaci-16.png",
+    "default_popup": "popup.html",
+    "default_title": "e-devlet soy ağacı görselleştir"
+  },
+  "author": "Agit Oktay <agit.oktay@gmail.com>",
+  "homepage_url": "https://github.com/agtokty/edevlet-soy-agaci",
+  "offline_enabled": true,
+  "optional_permissions": [
+    "tabs"
+  ],
+  "permissions": [
+    "tabs",
+    "<all_urls>"
+  ],
+  "short_name": "Soy Ağacı Görselleştir",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
