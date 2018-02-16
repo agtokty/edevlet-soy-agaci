@@ -31,6 +31,8 @@ function parseTable(table) {
     return arrayify(table.tBodies[0].rows).map(factory(headings));
 }
 
+var findANABABA = function(self){return self[this.self.length - 1] == "i" ?  (self + "nin Babası") : (self + "nın Babası")}
+
 var ID = "Sıra";
 var YAKINLIK = "Yakınlık Derecesi"
 var DOGUM_YERI_TARIHI = "Doğum Yeri ve Tarihi"
@@ -55,8 +57,8 @@ var relation = {
     }
     ,
     "Babasının Babasının Babası": {
-        Baba: "Babasının Babasının Babasının Babası",
-        Anne: "Babasının Babasının Babasının Annesi"
+        Baba: "Babasının Babasının Babasının Babası",//ok
+        Anne: "Babasının Babasının Babasının Annesi"//ok
     },
     "Babasının Babasının Annesi": {
         Baba: "Babasının Babasının Annesinin Babası",
@@ -71,6 +73,29 @@ var relation = {
         Baba: "Babasının Annesinin Annesinin Babası",
         Anne: "Babasının Annesinin Annesinin Annesi"
     },
+
+    //EN ALT
+    "Babasının Babasının Babasının Babası": {
+        self : "Babasının Babasının Babasının Babası",
+        Baba : function(){return findANABABA(this.self)},
+        Anne : function(){return findANABABA(this.self)},
+    },
+    "Babasının Babasının Babasının Annesi": {
+        self : "Babasının Babasının Babasının Annesi",
+        Baba : function(){return findANABABA(this.self)},
+        Anne : function(){return findANABABA(this.self)},
+    },
+    "Babasının Babasının Annesinin Babası": {
+        self : "Babasının Babasının Annesinin Babası",
+        Baba : function(){return findANABABA(this.self)},
+        Anne : function(){return findANABABA(this.self)},
+    },
+    "Babasının Babasının Annesinin Annesi": {
+        self : "Babasının Babasının Annesinin Annesi",
+        Baba : function(){return findANABABA(this.self)},
+        Anne : function(){return findANABABA(this.self)},
+    },
+
     "Annesi": {
         Baba: "Annesinin Babası",//ok
         Anne: "Annesinin Annesi"//ok
