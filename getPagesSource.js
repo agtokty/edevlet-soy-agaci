@@ -31,7 +31,7 @@ function parseTable(table) {
     return arrayify(table.tBodies[0].rows).map(factory(headings));
 }
 
-var findANABABA = function(self){return self[this.self.length - 1] == "i" ?  (self + "nin Babası") : (self + "nın Babası")}
+var findANABABA = function (self) { return self[this.self.length - 1] == "i" ? (self + "nin Babası") : (self + "nın Babası") }
 
 var ID = "Sıra";
 var YAKINLIK = "Yakınlık Derecesi"
@@ -76,24 +76,24 @@ var relation = {
 
     //EN ALT
     "Babasının Babasının Babasının Babası": {
-        self : "Babasının Babasının Babasının Babası",
-        Baba : function(){return findANABABA(this.self)},
-        Anne : function(){return findANABABA(this.self)},
+        self: "Babasının Babasının Babasının Babası",
+        Baba: function () { return findANABABA(this.self) },
+        Anne: function () { return findANABABA(this.self) },
     },
     "Babasının Babasının Babasının Annesi": {
-        self : "Babasının Babasının Babasının Annesi",
-        Baba : function(){return findANABABA(this.self)},
-        Anne : function(){return findANABABA(this.self)},
+        self: "Babasının Babasının Babasının Annesi",
+        Baba: function () { return findANABABA(this.self) },
+        Anne: function () { return findANABABA(this.self) },
     },
     "Babasının Babasının Annesinin Babası": {
-        self : "Babasının Babasının Annesinin Babası",
-        Baba : function(){return findANABABA(this.self)},
-        Anne : function(){return findANABABA(this.self)},
+        self: "Babasının Babasının Annesinin Babası",
+        Baba: function () { return findANABABA(this.self) },
+        Anne: function () { return findANABABA(this.self) },
     },
     "Babasının Babasının Annesinin Annesi": {
-        self : "Babasının Babasının Annesinin Annesi",
-        Baba : function(){return findANABABA(this.self)},
-        Anne : function(){return findANABABA(this.self)},
+        self: "Babasının Babasının Annesinin Annesi",
+        Baba: function () { return findANABABA(this.self) },
+        Anne: function () { return findANABABA(this.self) },
     },
 
     "Annesi": {
@@ -172,8 +172,14 @@ function getTree(all, yakinlik) {
         // var motherTree = getYakin(all, relation[yakinlik].Anne)
         // var fatherTree = getYakin(all, relation[yakinlik].Baba)
 
+
         var motherTree = getTree(all, relation[yakinlik].Anne)
         var fatherTree = getTree(all, relation[yakinlik].Baba)
+
+        if (typeof relation[yakinlik].Anne == "function") {
+            motherTree = getTree(all, relation[yakinlik].Anne())
+            fatherTree = getTree(all, relation[yakinlik].Baba())
+        }
 
         if (motherTree != null)
             item.children.push(motherTree)
