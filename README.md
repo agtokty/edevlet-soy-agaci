@@ -19,7 +19,7 @@ e-Devlet Alt-Üst Soy Bilgisi Sorgulama sayfasındaki verileri ağaç şeklinde 
     
 ![settings_path](https://i.hizliresim.com/MdaajM.png)
 
-* Açılan sayfada _Geliştirici modu_ seçeneği işaretli değil ise işaretleyin. Bunu işaretledikten sonra , aşağıda bazı butonların geldiğini göreceksiniz.
+* Açılan sayfada _Geliştirici modu_ seçeneği işaretli değil ise işaretleyin. Bunu işaretledikten sonra, aşağıda bazı butonların geldiğini göreceksiniz.
 
 ![gelistirici_modu](https://i.hizliresim.com/gO99Q0.png)
 
@@ -27,7 +27,7 @@ e-Devlet Alt-Üst Soy Bilgisi Sorgulama sayfasındaki verileri ağaç şeklinde 
 
 ![select_file](https://i.hizliresim.com/qGJJzZ.png)
 
-* Bu işlemden sonra eklentiniz kurulmuş olacaktır. Son olarak [https://www.turkiye.gov.tr/nvi-alt-ust-soy-bilgisi-sorgulama](https://www.turkiye.gov.tr/nvi-alt-ust-soy-bilgisi-sorgulama) adresine giderek eklentiyi çalış Google Chrome menüsünden çalıştırın.
+* Bu işlemden sonra eklenti kurulmuş olacaktır. Son olarak [https://www.turkiye.gov.tr/nvi-alt-ust-soy-bilgisi-sorgulama](https://www.turkiye.gov.tr/nvi-alt-ust-soy-bilgisi-sorgulama) adresine giderek eklentiyi Google Chrome menüsünden çalıştırın. _Soy agacı goruntule_ butonuna basın.
 
 
 ![last](https://i.hizliresim.com/9mDDjZ.png)
