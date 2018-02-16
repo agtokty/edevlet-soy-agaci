@@ -31,11 +31,13 @@ function parseTable(table) {
     return arrayify(table.tBodies[0].rows).map(factory(headings));
 }
 
-var findANABABA = function (self) { return self[this.self.length - 1] == "i" ? (self + "nin Babası") : (self + "nın Babası") }
+// var findANABABA = function (self) { return self[this.self.length - 1] == "i" ? (self + "nin Babası") : (self + "nın Babası") }
 
 
-var findANABABA = function (self) {
+var findANABABA2 = function (self) {
 
+    console.log("findANABABA2 -> " + self);
+    
     if (self == "Kendisi") {
         return {
             Baba: "Babası",
@@ -44,8 +46,8 @@ var findANABABA = function (self) {
     }
 
     return {
-        Baba: self[this.self.length - 1] == "i" ? (self + "nin Babası") : (self + "nın Babası"),
-        Anne: self[this.self.length - 1] == "i" ? (self + "nin Annesi") : (self + "nın Annesi")
+        Baba: (self[self.length - 1] == "i") ? (self + "nin Babası") : (self + "nın Babası"),
+        Anne: (self[self.length - 1] == "i") ? (self + "nin Annesi") : (self + "nın Annesi")
     }
 
 }
@@ -55,147 +57,6 @@ var YAKINLIK = "Yakınlık Derecesi"
 var DOGUM_YERI_TARIHI = "Doğum Yeri ve Tarihi"
 var NAME = "Adı"
 var SURNAME = "Soyadı"
-var relation = {
-    "Kendisi": {
-        Baba: "Babası",//ok
-        Anne: "Annesi"//ok
-    },
-    "Babası": {
-        Baba: "Babasının Babası",//ok
-        Anne: "Babasının Annesi"//ok
-    },
-    "Babasının Babası": {
-        Baba: "Babasının Babasının Babası",//ok
-        Anne: "Babasının Babasının Annesi"//ok
-    },
-    "Babasının Annesi": {
-        Baba: "Babasının Annesinin Babası",//ok
-        Anne: "Babasının Annesinin Annesi"//ok
-    }
-    ,
-    "Babasının Babasının Babası": {
-        Baba: "Babasının Babasının Babasının Babası",//ok
-        Anne: "Babasının Babasının Babasının Annesi"//ok
-    },
-    "Babasının Babasının Annesi": {
-        Baba: "Babasının Babasının Annesinin Babası",//ok
-        Anne: "Babasının Babasının Annesinin Annesi"//ok
-    }
-    ,
-    "Babasının Annesinin Babası": {
-        Baba: "Babasının Annesinin Babasının Babası",//ok
-        Anne: "Babasının Annesinin Babasının Annesi"//ok
-    },
-    "Babasının Annesinin Annesi": {
-        Baba: "Babasının Annesinin Annesinin Babası",//ok
-        Anne: "Babasının Annesinin Annesinin Annesi"//ok
-    },
-
-    //EN ALT - baba
-    "Babasının Babasının Babasının Babası": {
-        self: "Babasının Babasının Babasının Babası",
-        Parent: function () { return findANABABA(this.self) },
-    },
-    "Babasının Babasının Babasının Annesi": {
-        self: "Babasının Babasının Babasının Annesi",
-        Parent: function () { return findANABABA(this.self) }
-    },
-    "Babasının Babasının Annesinin Babası": {
-        self: "Babasının Babasının Annesinin Babası",
-        Parent: function () { return findANABABA(this.self) }
-    },
-    "Babasının Babasının Annesinin Annesi": {
-        self: "Babasının Babasının Annesinin Annesi",
-        Parent: function () { return findANABABA(this.self) }
-    },
-
-    "Babasının Annesinin Babasının Babası": {
-        self: "Babasının Annesinin Babasının Babası",
-        Parent: function () { return findANABABA(this.self) }
-    },
-    "Babasının Annesinin Babasının Annesi": {
-        self: "Babasının Annesinin Babasının Annesi",
-        Parent: function () { return findANABABA(this.self) }
-    },
-
-    "Babasının Annesinin Annesinin Babası": {
-        self: "Babasının Annesinin Annesinin Babası",
-        Parent: function () { return findANABABA(this.self) }
-    },
-
-    "Babasının Annesinin Annesinin Annesi": {
-        self: "Babasının Annesinin Annesinin Annesi",
-        Parent: function () { return findANABABA(this.self) }
-    },
-
-    //EN ALT - anna
-    "Annesinin Babasının Babasının Babası": {
-        self: "Annesinin Babasının Babasının Babası",
-        Parent: function () { return findANABABA(this.self) }
-    },
-    "Annesinin Babasının Babasının Annesi": {
-        self: "Annesinin Babasının Babasının Annesi",
-        Parent: function () { return findANABABA(this.self) }
-    },
-    "Annesinin Babasının Annesinin Babası": {
-        self: "Annesinin Babasının Annesinin Babası",
-        Parent: function () { return findANABABA(this.self) }
-    },
-    "Annesinin Babasının Annesinin Annesi": {
-        self: "Annesinin Babasının Annesinin Annesi",
-        Parent: function () { return findANABABA(this.self) }
-    },
-
-    "Annesinin Annesinin Babasının Babası": {
-        self: "Annesinin Annesinin Babasının Babası",
-        Parent: function () { return findANABABA(this.self) }
-    },
-    "Annesinin Annesinin Babasının Annesi": {
-        self: "Annesinin Annesinin Babasının Annesi",
-        Parent: function () { return findANABABA(this.self) }
-    },
-
-    "Annesinin Annesinin Annesinin Babası": {
-        self: "Annesinin Annesinin Annesinin Babası",
-        Parent: function () { return findANABABA(this.self) }
-    },
-
-    "Annesinin Annesinin Annesinin Annesi": {
-        self: "Annesinin Annesinin Annesinin Annesi",
-        Parent: function () { return findANABABA(this.self) }
-    },
-
-    "Annesi": {
-        Baba: "Annesinin Babası",//ok
-        Anne: "Annesinin Annesi"//ok
-    },
-    "Annesinin Babası": {
-        Baba: "Annesinin Babasının Babası",//ok
-        Anne: "Annesinin Babasının Annesi"//ok
-    },
-    "Annesinin Annesi": {
-        Baba: "Annesinin Annesinin Babası",//ok
-        Anne: "Annesinin Annesinin Annesi"//ok
-    }
-    ,
-    "Annesinin Babasının Babası": {
-        Baba: "Annesinin Babasının Babasının Babası",
-        Anne: "Annesinin Babasının Babasının Annesi"
-    },
-    "Annesinin Babasının Annesi": {
-        Baba: "Annesinin Babasının Annesinin Babası",
-        Anne: "Annesinin Babasının Annesinin Annesi"
-    }
-    ,
-    "Annesinin Annesinin Babası": {
-        Baba: "Annesinin Annesinin Babasının Babası",
-        Anne: "Annesinin Annesinin Babasının Annesi"
-    },
-    "Annesinin Annesinin Annesi": {
-        Baba: "Annesinin Annesinin Annesinin Babası",
-        Anne: "Annesinin Annesinin Annesinin Annesi"
-    }
-}
 
 var getNodeStructure = function () {
 
@@ -237,18 +98,19 @@ function getTree(all, yakinlik) {
         children: []
     }
 
-    if (relation[yakinlik]) {
+    var anaBaba = findANABABA2(yakinlik);
+    if (anaBaba) {
         // var motherTree = getYakin(all, relation[yakinlik].Anne)
         // var fatherTree = getYakin(all, relation[yakinlik].Baba)
 
 
-        var motherTree = getTree(all, relation[yakinlik].Anne)
-        var fatherTree = getTree(all, relation[yakinlik].Baba)
+        var motherTree = getTree(all, anaBaba.Anne)
+        var fatherTree = getTree(all, anaBaba.Baba)
 
-        if (typeof relation[yakinlik].Parent == "function") {
-            motherTree = getTree(all, relation[yakinlik].Parent().Anne)
-            fatherTree = getTree(all, relation[yakinlik].Parent().Baba)
-        }
+        // if (typeof relation[yakinlik].Parent == "function" && relation[yakinlik].Parent().Anne) {
+        //     motherTree = getTree(all, relation[yakinlik].Parent().Anne)
+        //     fatherTree = getTree(all, relation[yakinlik].Parent().Baba)
+        // }
 
         if (motherTree != null)
             item.children.push(motherTree)
