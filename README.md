@@ -1,6 +1,8 @@
 # edevlet-soy-agaci
 e-Devlet Alt-Üst Soy Bilgisi Sorgulama sayfasındaki verileri ağaç şeklinde görselleştiren tarayıcı eklentisi
 
+İndirme Linki : https://chrome.google.com/webstore/detail/soy-ağacı-görselleştir/bmcclnccbknndonhlfphpomnkamjgeje
+
 ----
 
 ### Not : Uygulama tamamen istemci tarafında çalışmaktadır. Kesinlikle herhangi bir bilgi saklama işlemi yapılmamaktadır. Kodu inceleyebilirsiniz!
