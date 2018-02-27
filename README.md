@@ -1,13 +1,19 @@
 # edevlet-soy-agaci
 e-Devlet Alt-Üst Soy Bilgisi Sorgulama sayfasındaki verileri ağaç şeklinde görselleştiren tarayıcı eklentisi
 
+### Not : Uygulama tamamen istemci tarafında çalışmaktadır. Kesinlikle herhangi bir bilgi saklama işlemi yapılmamaktadır. Kodu inceleyebilirsiniz!
+
+
 İndirme Linki : https://chrome.google.com/webstore/detail/soy-ağacı-görselleştir/bmcclnccbknndonhlfphpomnkamjgeje
 
 ----
+## Kullanım 
 
-### Not : Uygulama tamamen istemci tarafında çalışmaktadır. Kesinlikle herhangi bir bilgi saklama işlemi yapılmamaktadır. Kodu inceleyebilirsiniz!
+![](https://raw.githubusercontent.com/agtokty/edevlet-soy-agaci/master/soy_agaci_gif.gif)
 
 ---- 
+----
+
 ## Nasıl kurulur ve kullanılır
 
 * Eklenti kodlarını kendi bilgisayırınıza indirmek için yukarıdan "Clone or Download" butonuna tıklayınız. 
