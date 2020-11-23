@@ -42,4 +42,4 @@ e-Devlet Alt-Üst Soy Bilgisi Sorgulama sayfasındaki verileri ağaç şeklinde 
 
 # SONUÇ
 
-![last](https://i.hizliresim.com/m2JJOP.png)
+![last](result.png)
