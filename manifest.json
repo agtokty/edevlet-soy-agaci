@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Soy Ağacı Görselleştir",
-  "version": "0.1",
+  "version": "0.2",
   "description": "e-Devlet Alt-Üst Soy Bilgisi Sorgulama sayfasındaki verileri ağaç şeklinde görselleştiren tarayıcı eklentisidir.",
   "icons": {
     "16": "soy-agaci-16.png",
