@@ -4,6 +4,33 @@
     body {
         width: 200px;
         height: 50px;
+        background-color: #3b77ac;
+        letter-spacing: -.25px;
+    }
+
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+
+    #btnShow {
+        padding: 6.75px;
+
+        text-decoration: none;
+        color: #3b77ac;
+        margin: 0;
+        padding: 6.75px;
+        font-weight: 400;
+        list-style: none;
+        display: block;
+        border: 1px solid rgba(66, 132, 190, .5);
+        padding: .5em;
+        border-radius: .25em;
+        background: rgba(255, 255, 255, .5);
+        font-size: 90%;
+        text-shadow: 1px 1px 0 #fff;
+        line-height: 1.33em;
+        background: #e7ebee
     }
 </style>
 
@@ -17,7 +44,9 @@
     <div>
         <div id="family-tree"></div>
     </div>
-    <button id="btnShow" style="display:none">Soy agaci goruntule</button>
+    <div class="center">
+        <button id="btnShow" style="display:none;">Soy agaci goruntule</button>
+    </div>
     <div id="img-out"></div>
 </body>
 

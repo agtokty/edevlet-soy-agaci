@@ -31,12 +31,9 @@ function parseTable(table) {
     return arrayify(table.tBodies[0].rows).map(factory(headings));
 }
 
-// var findANABABA = function (self) { return self[this.self.length - 1] == "i" ? (self + "nin Babası") : (self + "nın Babası") }
+var findParents = function (self) {
 
-
-var findANABABA2 = function (self) {
-
-    console.log("findANABABA2 -> " + self);
+    console.log("findParents -> " + self);
     
     if (self == "Kendisi") {
         return {
@@ -98,19 +95,11 @@ function getTree(all, yakinlik) {
         children: []
     }
 
-    var anaBaba = findANABABA2(yakinlik);
+    var anaBaba = findParents(yakinlik);
     if (anaBaba) {
-        // var motherTree = getYakin(all, relation[yakinlik].Anne)
-        // var fatherTree = getYakin(all, relation[yakinlik].Baba)
-
 
         var motherTree = getTree(all, anaBaba.Anne)
         var fatherTree = getTree(all, anaBaba.Baba)
-
-        // if (typeof relation[yakinlik].Parent == "function" && relation[yakinlik].Parent().Anne) {
-        //     motherTree = getTree(all, relation[yakinlik].Parent().Anne)
-        //     fatherTree = getTree(all, relation[yakinlik].Parent().Baba)
-        // }
 
         if (motherTree != null)
             item.children.push(motherTree)

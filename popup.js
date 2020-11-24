@@ -42,9 +42,7 @@ chrome.runtime.onMessage.addListener(function (request, sender) {
 
     var source = JSON.parse(request.source)
     if (source.error) {
-
       message.innerText = source.error;
-
     } else if (source.chart) {
 
       message.style.display = 'none';
@@ -52,26 +50,22 @@ chrome.runtime.onMessage.addListener(function (request, sender) {
       chart_config = source;
 
     } else {
-
-      message.innerText = "Hata olustu!";
-
+      message.innerText = "(1)Hata olustu!";
+      console.log(source);
     }
-
-    // new Treant(chart_config);
   }
 });
 
 function onWindowLoad() {
-
   var message = document.querySelector('#message');
-
 
   chrome.tabs.executeScript(null, {
     file: "getPagesSource.js"
   }, function () {
     // If you try and inject into an extensions page or the webstore/NTP you'll get an error
     if (chrome.runtime.lastError) {
-      message.innerText = 'Hata olustu : \n' + chrome.runtime.lastError.message;
+      message.innerText = '(2)Hata olustu : \n' + chrome.runtime.lastError.message;
+      console.log(chrome.runtime.lastError);
     }
   });
 
