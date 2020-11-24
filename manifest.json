@@ -17,7 +17,7 @@
   "offline_enabled": true,
   "permissions": [
     "activeTab",
-    "https://www.turkiye.gov.tr"
+    "https://www.turkiye.gov.tr/*"
   ],
   "short_name": "Soy Ağacı Görselleştir",
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
